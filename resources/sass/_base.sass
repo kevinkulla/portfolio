@@ -1,0 +1,109 @@
+@use 'variables' as *
+@use 'mixins'
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Mulish:wght@200;300;400;600&display=swap')
+@charset 'utf-8'
+
+html
+	margin: 0
+	padding: 0
+	font-size: $font-size
+	background: $background
+	background-attachment: fixed
+	color: $darkPlum
+
+
+body
+	margin: auto
+	font-family: $body-font-stack
+	font-weight: 200
+	margin-top: 0
+
+h1,
+h2,
+h3,
+h4,
+h5
+	text-align: center
+	font-family: $header-font-stack
+
+
+h1
+	font-size: 2em
+	line-height: 1.1
+	text-align: left
+	font-weight: 800
+	margin:0 0.5em
+	display: inline-block
+	color: $darkGold
+	text-shadow: mixins.textShadow(0.25, 6, $darkPlum)
+
+	.nameSpacing
+		letter-spacing: 1.4px
+
+h2
+	text-shadow: mixins.textShadow(0.25, 2, $brown)
+	color: $gold
+	text-transform: capitalize
+	font-size: 2em
+
+h3
+	font-size: 1.25rem
+	margin-top: 0.25em
+
+h4
+	font-size: 1.5em
+	text-decoration: underline
+
+h5
+	text-align: center
+
+ul
+	padding: 0
+	margin: 0
+	list-style: none
+
+a
+	font-weight: 400
+	position: relative
+	text-decoration: none
+	color: $darkGold
+
+p
+	font-weight: 300
+	color: hsl(347, 16%, 22%)
+	line-height: 1.6em
+
+
+hr
+	width: 75%
+	border: 0
+	height: 1px
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0))
+
+
+
+main
+	display: block
+	width: 90%
+	margin: auto
+	margin-bottom: 50px
+	margin-top: 1.5em
+
+.mobile
+	display: block
+
+.desktop
+	display: none
+
+
+
+// @media (prefers-color-scheme: dark)
+// 	html,
+// 	nav
+// 		background: $dark-background
+// 		border-top: none
+// 		color: #fff
+
+// 	svg
+// 		stroke: white
+

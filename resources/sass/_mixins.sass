@@ -1,0 +1,29 @@
+@use 'variables' as *
+@charset 'utf-8'
+
+@mixin underline
+	& a:after
+		content: ""
+		position: absolute
+		width: 0
+		bottom: 0
+		left: 0
+		height: 1px
+		background-color: $gold
+		visibility: hidden
+		transition: all 0.3s ease-in-out
+	& a:hover:after
+		visibility: visible
+		width: 100%
+
+
+@function textShadow($precision, $size, $color)
+	$value: null
+	$offset: 0
+	$length: $size * (1 / $precision) - 1
+	@for $i from 0 through $length
+		$offset: $offset + $precision
+		$shadow: $offset + px $offset + px $color
+		$value: append($value, $shadow, comma)
+
+	@return $value

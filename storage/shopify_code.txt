@@ -1,0 +1,132 @@
+// $shop = Auth::user();
+        // $request = $shop->api()->graph('mutation{
+        //                                   collectionCreate(
+        //                                     input:{
+        //                                       title: "'. $collection->title .'",
+        //                                       descriptionHtml: "'. $collection->description .'"
+
+        //                                     }
+        //                                   )
+        //                                   {
+        //                                     collection{
+        //                                       id
+        //                                       title
+        //                                     }
+        //                                     userErrors {
+        //                                       field
+        //                                       message
+        //                                     }
+        //                                   }
+        //                                 }'
+        //                             );
+
+
+        // $collection->shopify_id = $request['body']['data']['collectionCreate']['collection']['id'];
+
+
+        $shop = Auth::user();
+        $request = $shop->api()->graph('mutation{
+                                          collectionDelete(
+                                            input:{
+                                              title: "'. $collection->shopify_id .'"
+
+                                            }
+                                          )
+                                          {
+                                            userErrors {
+                                              field
+                                              message
+                                            }
+                                          }
+                                        }'
+                                    );
+
+ $shop = Auth::user();
+        $request = $shop->api()->graph('mutation{
+                                          collectionUpdate(
+                                            input:{
+                                                id: "'. $collection->shopify_id .'",
+                                              title: "'. $request->title .'",
+                                              descriptionHtml: "'. $request->description .'"
+
+                                            }
+                                          )
+                                          {
+                                            collection{
+                                              id
+                                              title
+                                            }
+                                            userErrors {
+                                              field
+                                              message
+                                            }
+                                          }
+                                        }'
+                                    );
+
+
+                                    $painting->price = $request->price;
+        $painting->quantity = $request->quantity;
+        $painting->weight = $request->weight;
+        $painting->available = $request->available;
+        $painting->shopify_collection_id = $shopifyCollectionId;
+
+
+
+        $shop = Auth::user();
+        $productRequest = $shop->api()->graph('mutation{
+                                          productCreate(
+                                            input:{
+                                              title: "'. $collection->title .'",
+                                              descriptionHtml: "'. $collection->description .'",
+                                              collectionsToJoin: "'. $shopifyCollectionId .'",
+                                              status: "ACTIVE",
+                                              image:{
+                                                altText: "'. $painting->alt .'",
+                                                src: "'. $painting->url .'"
+                                              },
+
+
+                                            }
+                                          )
+                                          {
+                                            product{
+                                              id
+                                              title
+                                            }
+                                            userErrors {
+                                              field
+                                              message
+                                            }
+                                          }
+                                        }'
+                                    );
+
+
+
+        $painting->shopify_id = $productRequest['id'];
+
+        $productVarientRequest = $shop->api()->graph('mutation{
+                                          productVariantCreate:{
+                                            productVarient:{
+                                                productId: "'. $painting->shopify_id .'",
+                                                harmonizedSystemCode: "970190",
+                                                price: "'. $painting->price .'",
+                                                weight: "'. $painting->weight .'",
+                                                weightUnit: "kg",
+                                                taxable: "true",
+                                                requiresShipping: "true",
+                                                inventoryItem: {
+                                                    countryCodeOfOrigin: "CA",
+                                                    provinceCodeOfOrigin: "ONTARIO",
+                                                    tracked: "true"
+                                                },
+                                                inventoryPolicy: "DENY",
+                                            }
+                                            userErrors {
+                                              field
+                                              message
+                                            }
+                                          }
+                                        }'
+                                    );
