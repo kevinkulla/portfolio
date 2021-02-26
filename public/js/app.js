@@ -104,7 +104,28 @@
       this.bindEvents();
     },
     bindEvents: function bindEvents() {
-      $(document).on('click', '.navigationLinks a', this.toggleAboutSections).on('click', '.close', this.closeAboutSections);
+      $(document).on('click', '.navigationLinks a', this.toggleAboutSections).on('click', '.close', this.closeAboutSections).on('click', '#toggle', this.toggleDarkMode).ready(this.toggleThemeIcon);
+    },
+    toggleThemeIcon: function toggleThemeIcon() {
+      var preferesDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      if (preferesDarkTheme.matches && $("#toggle").prop('checked') == false && !$('html').hasClass('light-theme')) {
+        $("#toggle").prop('checked', true);
+      }
+    },
+    toggleDarkMode: function toggleDarkMode() {
+      var preferesDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+      var theme;
+
+      if (preferesDarkTheme.matches) {
+        $('html').toggleClass('light-theme');
+        theme = $('html').hasClass('light-theme') ? "light-theme" : "dark-theme";
+      } else {
+        $('html').toggleClass('dark-theme');
+        theme = $('html').hasClass('light-theme') ? "light-theme" : "dark-theme";
+      }
+
+      document.cookie = "theme=" + theme;
     },
     toggleAboutSections: function toggleAboutSections(e) {
       if (!$(this).hasClass('artistBio')) {

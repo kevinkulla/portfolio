@@ -1,0 +1,135 @@
+@use 'variables' as *
+@use 'mixins'
+@charset 'utf-8'
+
+html.dark-theme
+	background: $darkestBlue
+	background-attachment: fixed
+	color: #CCF6FF
+
+	.frame
+		filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold) brightness(.8) contrast(1.1)
+
+	h1
+		text-shadow: mixins.textShadow(0.25, 6, $lightTeal)
+		color: #8C7A9F
+
+	h2
+		text-shadow: mixins.textShadow(0.25, 1.5, $lightTeal)
+		letter-spacing: 1px
+		color: #B38AAE
+		a
+			color: #B38AAE
+
+	h3 a,
+	nav a
+		color: #CCF6FF
+	li a
+		color: $pink
+
+	.card
+		border: 1px solid #000
+		border-top: 1px solid $darkBlue
+		border-left: 1px solid $darkBlue
+
+	.aboutPopup
+		> h3
+			@include mixins.underline($pink)
+		li
+			@include mixins.underline($pink)
+
+	.pictures h2
+		@include mixins.underline($pink)
+
+
+@media (prefers-color-scheme: dark)
+	html
+		background: $darkestBlue
+		background-attachment: fixed
+		color: #CCF6FF
+
+	.frame
+		filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold) brightness(.8) contrast(1.1)
+
+	h1
+		text-shadow: mixins.textShadow(0.25, 6, $lightTeal)
+		color: #8C7A9F
+
+	h2
+		text-shadow: mixins.textShadow(0.25, 1.5, $lightTeal)
+		letter-spacing: 1px
+		color: #B38AAE
+		a
+			color: #B38AAE
+
+	h3 a,
+	nav a
+		color: #CCF6FF
+	li a
+		color: $pink
+
+	.card
+		border: 1px solid #000
+		border-top: 1px solid $darkBlue
+		border-left: 1px solid $darkBlue
+
+	.theme-toggle svg
+		fill: $pink
+
+	.aboutPopup
+		> h3
+			@include mixins.underline($pink)
+		li
+			@include mixins.underline($pink)
+
+	.pictures h2
+		@include mixins.underline($pink)
+
+	html.light-theme
+		background: $background
+		background-attachment: fixed
+		color: $darkPlum
+
+		.frame
+			filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold)
+
+		h1
+			color: $darkGold
+			text-shadow: mixins.textShadow(0.25, 6, $darkPlum)
+
+		h2
+			text-shadow: mixins.textShadow(0.25, 2, $brown)
+			color: $gold
+			letter-spacing: 0
+			a
+				color: $gold
+
+		h3 a
+			color: $darkPlum
+
+		nav a,
+		li a
+			color: $darkGold
+
+
+		.card
+			border:1px solid #fff
+			border-bottom: 1px solid #f7f7f7
+
+		.theme-toggle svg
+			fill: $darkPlum
+
+		.aboutPopup
+			> h3
+				@include mixins.underline($gold)
+			li
+				@include mixins.underline($gold)
+
+		.pictures h2
+			@include mixins.underline($gold)
+
+
+
+
+
+

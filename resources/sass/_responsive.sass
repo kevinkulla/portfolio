@@ -48,12 +48,12 @@
 				margin-bottom: 0.25em
 		> h3
 			margin-bottom: 1.5em
-			@include mixins.underline
+			@include mixins.underline($gold)
 		li
-			@include mixins.underline
+			@include mixins.underline($gold)
 
 	.pictures h2
-		@include mixins.underline
+		@include mixins.underline($gold)
 
 
 	.pictures,
@@ -101,7 +101,9 @@
 		text-transform: capitalize
 
 	.card
-		width: 30%
+		width: fit-content
+		max-width: 50%
+		padding: 5px 10px
 
 	.mobile
 		display: none
@@ -115,7 +117,4 @@
 	.pictures,
 	.about
 		width: 70%
-
-
-
 

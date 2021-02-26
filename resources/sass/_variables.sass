@@ -1,17 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Mulish:wght@200;300;400;600&family=Shippori+Mincho+B1:wght@400;500;700&display=swap')
 @charset 'utf-8'
-
-$gold: hsl(38, 53%, 59%)
-$darkGold: hsl(39, 53%, 38%)
-$lightGrey: hsl(120, 2%, 88%)
-$darkPlum: 	hsl(347, 16%, 22%)
-$brown: hsl(35, 18%, 26%)
 
 
 $font-size: 16px
 $body-font-stack: 'Merriweather', serif
 $header-font-stack: 'Mulish', sans-serif
 
-$background: radial-gradient(hsla(255,100%,100%,1) 0%, hsla(0,0%,77%, 1) 100%) // White in the center moving to light grey at edges
+// Light Mode Pallete
 
-$dark-background: radial-gradient(hsl(0deg 0% 18%) 0%, hsl(0deg 0% 11%) 100%) // Darkest grey on outside moving to slightly lighter grey in center
+$gold: hsl(38, 53%, 59%)
+$darkGold: hsl(39, 53%, 38%)
+$darkerGold: hsl(39, 53%, 20%)
+$lightGrey: hsl(120, 2%, 88%)
+$darkPlum: 	hsl(347, 16%, 22%)
+$brown: hsl(35, 18%, 26%)
 
+
+
+$background: radial-gradient(at 60% 50%, hsla(255,100%,100%,1) 0%, hsla(0,0%,77%, 1) 100%) // White in the center moving to light grey at edges
+
+
+
+
+// Dark Mode Pallete
+
+$darkestBlue: #0e161b
+$darkBlue: #2F4858
+$teal: #008E7C
+$lightTeal: #55C4B0
+$pink: #eac6d6
+
+$dark-background: radial-gradient(at 60% 50%, $darkBlue 0%, $darkestBlue 100%) // Darkest grey on outside moving to slightly lighter grey in center
