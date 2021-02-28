@@ -14,7 +14,10 @@ body {
   font-family: "Merriweather", serif;
   font-weight: 200;
   margin-top: 0;
-  transition: color 0.1s linear;
+}
+
+svg {
+  fill: #412f33;
 }
 
 h1,
@@ -34,7 +37,7 @@ h1 {
   margin: 0 0.5em;
   display: inline-block;
   color: #94702e;
-  text-shadow: 0.25px 0.25px #412f33, 0.5px 0.5px #412f33, 0.75px 0.75px #412f33, 1px 1px #412f33, 1.25px 1.25px #412f33, 1.5px 1.5px #412f33, 1.75px 1.75px #412f33, 2px 2px #412f33, 2.25px 2.25px #412f33, 2.5px 2.5px #412f33, 2.75px 2.75px #412f33, 3px 3px #412f33, 3.25px 3.25px #412f33, 3.5px 3.5px #412f33, 3.75px 3.75px #412f33, 4px 4px #412f33, 4.25px 4.25px #412f33, 4.5px 4.5px #412f33, 4.75px 4.75px #412f33, 5px 5px #412f33, 5.25px 5.25px #412f33, 5.5px 5.5px #412f33, 5.75px 5.75px #412f33, 6px 6px #412f33;
+  text-shadow: 0.25px 0.25px #412f33, 0.5px 0.5px #412f33, 0.75px 0.75px #412f33, 1px 1px #412f33, 1.25px 1.25px #412f33, 1.5px 1.5px #412f33, 1.75px 1.75px #412f33, 2px 2px #412f33;
 }
 
 h1 .nameSpacing {
@@ -176,7 +179,6 @@ main {
   transform: none;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black' width='25px' height='25px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'/%3E%3C/svg%3E");
 }
 
 .switch {
@@ -247,14 +249,14 @@ nav ul {
   justify-content: space-around;
 }
 
-nav nav a {
+nav a {
   position: relative;
 }
 
-nav nav aactive::before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' width='50' height='50' viewBox='0 0 531.74 460.5' fill='hsla(0,0%25,87%25, 1)' stroke='hsla(40.6,90%25,45%25,1)' stroke-width='1' overflow='visible'%3E%3Cpolygon points='530.874,0.5 265.87,459.5 0.866,0.5 '/%3E%3C/svg%3E");
+nav a.active::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' width='20' height='20' fill='#e0e1e0' stroke='#e0e1e0' stroke-width='1' viewBox='0 0 531.74 460.5' overflow='visible'%3E%3Cpolygon points='530.874,0.5 265.87,459.5 0.866,0.5 '/%3E%3C/svg%3E");
   position: absolute;
-  top: -48px;
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -305,6 +307,12 @@ nav nav aactive::before {
 .connect ul {
   display: flex;
   justify-content: space-around;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 footer {
@@ -365,7 +373,8 @@ footer p {
   .aboutPopup article {
     display: block;
     font-size: 1em;
-    background: transparent;
+    background: transparent !important;
+    border: none !important;
     padding: 0;
     margin-bottom: 1.5em;
   }
@@ -437,6 +446,7 @@ footer p {
   h1 {
     font-size: 5em;
     margin: auto;
+    text-shadow: 0.25px 0.25px #412f33, 0.5px 0.5px #412f33, 0.75px 0.75px #412f33, 1px 1px #412f33, 1.25px 1.25px #412f33, 1.5px 1.5px #412f33, 1.75px 1.75px #412f33, 2px 2px #412f33, 2.25px 2.25px #412f33, 2.5px 2.5px #412f33, 2.75px 2.75px #412f33, 3px 3px #412f33, 3.25px 3.25px #412f33, 3.5px 3.5px #412f33, 3.75px 3.75px #412f33, 4px 4px #412f33, 4.25px 4.25px #412f33, 4.5px 4.5px #412f33, 4.75px 4.75px #412f33, 5px 5px #412f33, 5.25px 5.25px #412f33, 5.5px 5.5px #412f33, 5.75px 5.75px #412f33, 6px 6px #412f33;
   }
 
   h1 .nameSpacing {
@@ -496,6 +506,10 @@ footer p {
   .desktop {
     display: block;
   }
+
+  .theme-toggle {
+    position: static;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -509,6 +523,15 @@ html.dark-theme {
   background: #0e161b;
   background-attachment: fixed;
   color: #CCF6FF;
+}
+
+html.dark-theme svg {
+  fill: #55C4B0;
+}
+
+html.dark-theme nav {
+  background: #0e161b;
+  border-top: 1px solid #2F4858;
 }
 
 html.dark-theme .frame {
@@ -579,6 +602,11 @@ html.dark-theme .aboutPopup li a:hover:after {
   width: 100%;
 }
 
+html.dark-theme .aboutPopup article {
+  background-color: #2F4858;
+  border: 1px solid #0e161b;
+}
+
 html.dark-theme .pictures h2 a:after {
   content: "";
   position: absolute;
@@ -601,6 +629,15 @@ html.dark-theme .pictures h2 a:hover:after {
     background: #0e161b;
     background-attachment: fixed;
     color: #CCF6FF;
+  }
+
+  svg {
+    fill: #55C4B0;
+  }
+
+  nav {
+    background: #0e161b;
+    border-top: 1px solid #2F4858;
   }
 
   .frame {
@@ -675,6 +712,11 @@ html.dark-theme .pictures h2 a:hover:after {
     width: 100%;
   }
 
+  .aboutPopup article {
+    background-color: #2F4858;
+    border: 1px solid #0e161b;
+  }
+
   .pictures h2 a:after {
     content: "";
     position: absolute;
@@ -696,6 +738,15 @@ html.dark-theme .pictures h2 a:hover:after {
     background: radial-gradient(at 60% 50%, white 0%, #c4c4c4 100%);
     background-attachment: fixed;
     color: #412f33;
+  }
+
+  html.light-theme svg {
+    fill: #412f33;
+  }
+
+  html.light-theme nav {
+    border-top: 1px solid #e0e1e0;
+    background: radial-gradient(white, #dedede);
   }
 
   html.light-theme .frame {
@@ -767,6 +818,11 @@ html.dark-theme .pictures h2 a:hover:after {
   html.light-theme .aboutPopup li a:hover:after {
     visibility: visible;
     width: 100%;
+  }
+
+  html.light-theme .aboutPopup article {
+    background-color: transparent;
+    border: none;
   }
 
   html.light-theme .pictures h2 a:after {

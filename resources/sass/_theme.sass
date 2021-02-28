@@ -6,6 +6,12 @@ html.dark-theme
 	background: $darkestBlue
 	background-attachment: fixed
 	color: #CCF6FF
+	svg
+		fill: $lightTeal
+
+	nav
+		background: $darkestBlue
+		border-top: 1px solid $darkBlue
 
 	.frame
 		filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold) brightness(.8) contrast(1.1)
@@ -37,6 +43,9 @@ html.dark-theme
 			@include mixins.underline($pink)
 		li
 			@include mixins.underline($pink)
+		article
+			background-color: $darkBlue
+			border: 1px solid $darkestBlue
 
 	.pictures h2
 		@include mixins.underline($pink)
@@ -47,6 +56,12 @@ html.dark-theme
 		background: $darkestBlue
 		background-attachment: fixed
 		color: #CCF6FF
+	svg
+		fill: $lightTeal
+
+	nav
+		background: $darkestBlue
+		border-top: 1px solid $darkBlue
 
 	.frame
 		filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold) brightness(.8) contrast(1.1)
@@ -81,6 +96,9 @@ html.dark-theme
 			@include mixins.underline($pink)
 		li
 			@include mixins.underline($pink)
+		article
+			background-color: $darkBlue
+			border: 1px solid $darkestBlue
 
 	.pictures h2
 		@include mixins.underline($pink)
@@ -89,6 +107,14 @@ html.dark-theme
 		background: $background
 		background-attachment: fixed
 		color: $darkPlum
+
+		svg
+			fill: $darkPlum
+
+		nav
+			border-top: 1px solid $lightGrey
+			background: radial-gradient(hsla(255,100%,100%,1), hsla(0,0%,87%, 1))
+
 
 		.frame
 			filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold)
@@ -124,6 +150,9 @@ html.dark-theme
 				@include mixins.underline($gold)
 			li
 				@include mixins.underline($gold)
+			article
+				background-color: transparent
+				border: none
 
 		.pictures h2
 			@include mixins.underline($gold)

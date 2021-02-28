@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $painting->title)
+@section('title', ucwords($painting->title) . ' — Kevin Kulla')
 
 @section('content')
 
@@ -10,7 +10,14 @@
 
         <div class="painting">
 			<div class="frame">
-				<img src="{{ $painting->url }}" alt="{{ $painting->alt }}" />
+				<img
+						srcset="{{ $painting->url }}?tr=w-300 300w,
+								{{ $painting->url }}?tr=w-600 600w,
+								{{ $painting->url }}?tr=w-900 900w,
+								{{ $painting->url }}?tr=w-1200 1200w"
+
+						src="{{ $painting->url }}"
+						alt="{{ $painting->alt }}" />
 			</div>
 			<div class="card">
 				<h2>{{ $painting->title }}</h2>

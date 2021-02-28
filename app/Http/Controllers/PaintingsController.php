@@ -115,25 +115,6 @@ class PaintingsController extends Controller
     public function show(Collection $collection, Painting $painting)
     {
 
-        $imageKit = new ImageKit(
-            "public_FP4NapuBHVk5/rzls8xm6eZLon8=",
-            "private_Wi5Oh1xwOYNBxGL6SV6tyN0z72k=",
-            "https://ik.imagekit.io/1gfgqmo2jq8"
-        );
-
-        $url = $imageKit->url(array(
-            "path" => "/" . $painting->url,
-            "transformation" => array(
-                array(
-                    "width" => "auto",
-                    "dpr" => "auto",
-                )
-            )
-        ));
-
-        $painting->url = $url;
-
-
         return view('paintings.show', compact('painting', 'collection'));
 
     }

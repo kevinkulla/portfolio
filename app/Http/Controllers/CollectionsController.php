@@ -76,31 +76,8 @@ class CollectionsController extends Controller
      */
     public function show(Collection $collection)
     {
-        $imageKit = new ImageKit(
-            "public_FP4NapuBHVk5/rzls8xm6eZLon8=",
-            "private_Wi5Oh1xwOYNBxGL6SV6tyN0z72k=",
-            "https://ik.imagekit.io/1gfgqmo2jq8"
-        );
-
 
         $paintings = Painting::where('collection', $collection->id)->get();
-
-        foreach ($paintings as $painting) {
-
-        	$url = $imageKit->url(array(
-    			"path" => "/" . $painting->url,
-    			"transformation" => array(
-    				array(
-    					"width" => "auto",
-    					"dpr" => "auto",
-    				)
-    			)
-    		));
-
-    		echo $url;
-
-        	$painting->url = $url;
-        }
 
 
         return view('collections.show', compact('paintings', 'collection'));
