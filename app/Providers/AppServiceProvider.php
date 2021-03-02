@@ -27,12 +27,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //  view()->share('collections', \App\Models\Collection::all());
+         view()->share('collections', \App\Models\Collection::all());
 
-        // $filter = new IntToRoman();
-        // $year = $filter->filter( date('Y'));
+        $filter = new IntToRoman();
+        $year = $filter->filter( date('Y'));
 
-        // view()->share('year', $year);
+        view()->share('year', $year);
 
     }
 }
