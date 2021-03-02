@@ -13,6 +13,9 @@ class ReaddPaintingsTable extends Migration
      */
     public function up()
     {
+
+        Schema::dropIfExists('paintings');
+
         Schema::create('paintings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
