@@ -23,7 +23,7 @@ class CreatePaintingsTable extends Migration
             $table->string('alt');
             $table->timestamps();
             $table->string('collection');
-            $table->int('order_index')->nullable();
+            $table->integer('order_index')->nullable();
 
         });
     }
