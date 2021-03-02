@@ -26,7 +26,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<h2><a href="{{ url($collection->title . '/' . $painting->slug) }}"> {{ $painting->title }}</a></h2>
+				<h2><a href="{{ url($collection->slug . '/' . $painting->slug) }}"> {{ $painting->title }}</a></h2>
 				<ul>
 					<li>{{ $painting->height }}cm x {{$painting->width }}cm</li>
 					<li>{{ $painting->medium }}</li>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('title', 'Add Painting')
 
@@ -6,7 +6,7 @@
 
 	<section class="pictures">
 
-		<h2>Add a Collection</h2>
+		<h2>Edit Painting</h2>
 
              @if ($errors->any())
                 <div class="alert alert-danger">

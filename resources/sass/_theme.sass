@@ -17,7 +17,7 @@ html.dark-theme
 		filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold) brightness(.8) contrast(1.1)
 
 	h1
-		text-shadow: mixins.textShadow(0.25, 6, $lightTeal)
+		text-shadow: mixins.textShadow(0.25, 2, $lightTeal)
 		color: #8C7A9F
 
 	h2
@@ -67,7 +67,7 @@ html.dark-theme
 		filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px $darkGold) brightness(.8) contrast(1.1)
 
 	h1
-		text-shadow: mixins.textShadow(0.25, 6, $lightTeal)
+		text-shadow: mixins.textShadow(0.25, 2, $lightTeal)
 		color: #8C7A9F
 
 	h2
@@ -121,7 +121,7 @@ html.dark-theme
 
 		h1
 			color: $darkGold
-			text-shadow: mixins.textShadow(0.25, 6, $darkPlum)
+			text-shadow: mixins.textShadow(0.25, 2, $darkPlum)
 
 		h2
 			text-shadow: mixins.textShadow(0.25, 2, $brown)
@@ -147,18 +147,28 @@ html.dark-theme
 
 		.aboutPopup
 			> h3
-				@include mixins.underline($gold)
+				@include mixins.underline($darkGold)
 			li
-				@include mixins.underline($gold)
+				@include mixins.underline($darkGold)
 			article
 				background-color: transparent
 				border: none
 
 		.pictures h2
-			@include mixins.underline($gold)
+			@include mixins.underline($darkGold)
 
 
 
+@media screen and (min-width: 1024px)
+	html.dark-theme h1
+		text-shadow: mixins.textShadow(0.25, 6, $lightTeal)
 
+
+@media screen and (min-width: 1024px) and (prefers-color-scheme: dark)
+	html h1
+		text-shadow: mixins.textShadow(0.25, 6, $lightTeal)
+
+	html.light-theme h1
+		text-shadow: mixins.textShadow(0.25, 6, $darkPlum)
 
 

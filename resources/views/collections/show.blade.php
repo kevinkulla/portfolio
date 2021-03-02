@@ -5,8 +5,11 @@
 @section('content')
 
 	<section class="pictures">
-        <h2>{{ $collection->title }}</h2>
-        <p>{{ $collection->description }}</p>
+        <article class="description">
+        	<h2>{{ $collection->title }}</h2>
+
+        	<p>{{ $collection->description }}</p>
+        </article>
 
         @foreach($paintings as $painting)
         <div class="painting">

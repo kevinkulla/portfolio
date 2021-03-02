@@ -52,7 +52,6 @@ class CollectionsController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
-            'description' => 'required',
         ]);
 
         $collection = new Collection;

@@ -1,11 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
-
-	<section>
-		<a href="{{ route('collection.create') }}"> Add a Collection </a>
-	</section>
-
 
 	@if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -18,10 +13,10 @@
 
 
 
-		<div class="collectionGrid">
+		<div class="collectionBlock">
 
-			<div class="gridItem">{{ $collection->title }}</div>
-			<div class="gridItem">{{ $collection->description }}</div>
+			<h3 class="title">{{ $collection->title }}</h3>
+			<p class="description">{{ $collection->description }}</p>
 
 			<form action="{{ route('collection.destroy', $collection->slug) }}" method="POST">
 				@method('DELETE')

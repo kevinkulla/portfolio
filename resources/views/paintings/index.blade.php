@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
-
-	<section>
-		<a href="{{ route('painting.create') }}"> Add a Painting </a>
-	</section>
 
 	@if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -15,10 +11,10 @@
 	@foreach ($paintings as $painting)
 
 
-		<div class="collectionGrid">
+		<div class="painting">
 
-			<div class="gridItem">{{ $painting->title }}</div>
-			<div class="gridItem">{{ $painting->description }}</div>
+			<h3 class="gridItem">{{ $painting->title }}</h3>
+			<img src="{{ $painting->thumbnail }}" />
 
 			<form action="{{ route('painting.destroy', $painting->id) }}" method="POST">
 				@csrf

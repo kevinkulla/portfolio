@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('title', 'Add Painting')
 
@@ -34,12 +34,12 @@
 
             <div class="form-group">
             	<label for="title">Title:</label>
-            	<input type="text" name="title">
+            	<input type="text" name="title" autofocus>
             </div>
 
             <div class="form-group">
             	<label for="year">Year:</label>
-            	<input type="text" name="year">
+            	<input type="number" min="2020" max="2099" step="1" value="{{ now()->year }}" name="year">
             </div>
 
             <div class="form-group">
@@ -49,12 +49,12 @@
 
             <div class="form-group">
             	<label for="height">Height:</label>
-            	<input type="text" name="height">
+            	<input type="number" name="height">
             </div>
 
              <div class="form-group">
             	<label for="width">Width:</label>
-            	<input type="text" name="width">
+            	<input type="number" step="0.1" name="width">
             </div>
 
              <div class="form-group">
