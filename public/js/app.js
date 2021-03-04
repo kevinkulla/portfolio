@@ -100,8 +100,15 @@
   var srcObject = {};
   var terracotta = {
     initalize: function initalize() {
-      console.log("initalize");
       this.bindEvents();
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'UA-155144334-1');
     },
     bindEvents: function bindEvents() {
       $(document).on('click', '.navigationLinks a', this.toggleAboutSections).on('click', '.close', this.closeAboutSections).on('click', '#toggle', this.toggleDarkMode).ready(this.toggleThemeIcon);
