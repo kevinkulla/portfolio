@@ -18,7 +18,7 @@
     <article class="artistBio">
         <h2>Bio</h2>
         <p>Kevin Kulla [b. 1990] is a Canadian figurative painter born and based in Peterborough, Ontario. Beginning without sketches or studies, Kevin constructs emotionally-driven scenes adorned with a wealth of playful details drawing inspiration from the connections his memories, and immediate influences share with his subject. His characteristically unrefined style was born from erratically bouncing around the canvas building layers of acrylic paint. Kevin was awarded a Certificate of Achievement from the Canadian Portrait Society for his work Self Portrait in the 2020 Canadian Portrait Competition, “The Miracle of the Portrait.” His work is held in private collections across North America.</p>
-        <a href="#">Download CV</a>
+        <a href="{{ asset('documents/Kevin_Kulla_Artist_CV.pdf') }}">Download CV</a>
     </article>
 
 

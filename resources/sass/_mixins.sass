@@ -16,6 +16,23 @@
 		visibility: visible
 		width: 100%
 
+@mixin underline2($color)
+	&:after
+		content: ""
+		position: absolute
+		width: 0
+		bottom: 0
+		left: 0
+		height: 1px
+		background-color: $color
+		visibility: hidden
+		transition: all 0.3s ease-in-out
+	&:hover:after
+		visibility: visible
+		width: 100%
+
+
+
 @mixin arrow($color)
 	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' width='20' height='20' fill='#{$color}' stroke='#{$color}' stroke-width='1' viewBox='0 0 531.74 460.5' overflow='visible'%3E%3Cpolygon points='530.874,0.5 265.87,459.5 0.866,0.5 '/%3E%3C/svg%3E")
 
