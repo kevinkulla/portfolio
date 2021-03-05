@@ -543,6 +543,9 @@ html.dark-theme .frame {
 
 html.dark-theme h1 {
   text-shadow: 0.25px 0.25px #55C4B0, 0.5px 0.5px #55C4B0, 0.75px 0.75px #55C4B0, 1px 1px #55C4B0, 1.25px 1.25px #55C4B0, 1.5px 1.5px #55C4B0, 1.75px 1.75px #55C4B0, 2px 2px #55C4B0;
+}
+
+html.dark-theme h1 a {
   color: #8C7A9F;
 }
 
@@ -670,6 +673,9 @@ html.dark-theme a:hover:after {
 
   h1 {
     text-shadow: 0.25px 0.25px #55C4B0, 0.5px 0.5px #55C4B0, 0.75px 0.75px #55C4B0, 1px 1px #55C4B0, 1.25px 1.25px #55C4B0, 1.5px 1.5px #55C4B0, 1.75px 1.75px #55C4B0, 2px 2px #55C4B0;
+  }
+
+  h1 a {
     color: #8C7A9F;
   }
 
@@ -778,8 +784,11 @@ html.dark-theme a:hover:after {
   }
 
   html.light-theme h1 {
-    color: #94702e;
     text-shadow: 0.25px 0.25px #412f33, 0.5px 0.5px #412f33, 0.75px 0.75px #412f33, 1px 1px #412f33, 1.25px 1.25px #412f33, 1.5px 1.5px #412f33, 1.75px 1.75px #412f33, 2px 2px #412f33;
+  }
+
+  html.light-theme h1 a {
+    color: #94702e;
   }
 
   html.light-theme h2 {
