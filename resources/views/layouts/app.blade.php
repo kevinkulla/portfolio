@@ -18,7 +18,7 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 
 
-	<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/styles.css') }}" media="screen">
 
 
 </head>
@@ -80,7 +80,7 @@
 		<p>&copy; {{ $year }}—Kevin Kulla</p>
 	</footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155144334-1"></script>
 	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 	<script type="text/javascript">
