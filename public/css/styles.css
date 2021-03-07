@@ -564,7 +564,8 @@ html.dark-theme nav a {
   color: #CCF6FF;
 }
 
-html.dark-theme li a {
+html.dark-theme li a,
+html.dark-theme .artistBio a {
   color: #eac6d6;
 }
 
@@ -694,7 +695,8 @@ html.dark-theme a:hover:after {
     color: #CCF6FF;
   }
 
-  li a {
+  li a,
+  .artistBio a {
     color: #eac6d6;
   }
 
@@ -806,7 +808,8 @@ html.dark-theme a:hover:after {
   }
 
   html.light-theme nav a,
-  html.light-theme li a {
+  html.light-theme li a,
+  html.light-theme .artistBio a {
     color: #94702e;
   }
 
