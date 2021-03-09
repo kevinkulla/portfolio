@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Log;
 use App\Models\Collection;
 use App\Models\Painting;
-use Newsletter;
+use Spatie\Newsletter\NewsletterFacade as Newsletter;
 
 
 
