@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Log;
 use App\Models\Collection;
 use App\Models\Painting;
-use Newsletter;
+use Spatie\Newsletter\NewsletterFacade as Newsletter;
 
 
 
@@ -50,11 +50,13 @@ class HomeController extends Controller
             return redirect()
                         ->back()
                         ->with('success', 'You have been subscribed!');
-        }
-
-        return redirect()
+        } else {
+            return redirect()
                         ->back()
                         ->with('error', 'Sorry, there was an issue subscribing. Please try again. If this error continues please <a href="mailto:kevin@kevinkulla.com">send me an email</a> and I will get it sorted out.');
+
+        }
+
 
 
 
