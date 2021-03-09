@@ -416,6 +416,14 @@ footer p {
     margin: auto;
   }
 
+  .alert {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    padding: 1em;
+    background-color: #2F4858;
+  }
+
   .aboutPopup {
     width: auto;
     position: static;
