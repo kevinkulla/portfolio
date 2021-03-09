@@ -18,7 +18,7 @@ return [
     /*
      * The listName to use when no listName has been specified in a method.
      */
-    'defaultListName' => 'subscribers',
+    'defaultListName' => 'Kevin Kulla',
 
     /*
      * Here you can define properties of the lists.
@@ -32,7 +32,7 @@ return [
          * You can set it to any string you want and you can add
          * as many lists as you want.
          */
-        'subscribers' => [
+        'Kevin Kulla' => [
 
             /*
              * A MailChimp list id. Check the MailChimp docs if you don't know
