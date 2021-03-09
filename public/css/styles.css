@@ -117,7 +117,8 @@ main {
 .card {
   width: 60%;
   border: 1px solid #fff;
-  border-bottom: 1px solid #f7f7f7;
+  border-bottom: 1px solid #e4e2e2;
+  border-right: 1px solid #e4e2e2;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   font-size: 0.8em;
   margin: 3.7em auto 6em;
@@ -166,6 +167,7 @@ main {
 }
 
 .close {
+  display: none;
   position: absolute;
   width: 40px;
   height: 40px;
@@ -177,6 +179,10 @@ main {
   transform: none;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.close.showing {
+  display: block;
 }
 
 .switch {
@@ -252,7 +258,6 @@ nav a {
 }
 
 nav a.active::before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' width='20' height='20' fill='#e0e1e0' stroke='#e0e1e0' stroke-width='1' viewBox='0 0 531.74 460.5' overflow='visible'%3E%3Cpolygon points='530.874,0.5 265.87,459.5 0.866,0.5 '/%3E%3C/svg%3E");
   position: absolute;
   top: 0px;
   left: 50%;
@@ -267,7 +272,7 @@ nav a.active::before {
   left: 50%;
   transform: translateX(-50%);
   background-color: #e0e1e0;
-  z-index: 99;
+  z-index: 100;
 }
 
 .aboutPopup.showing {
@@ -313,6 +318,59 @@ nav a.active::before {
   right: 10px;
 }
 
+.newsletter {
+  position: relative;
+}
+
+.newsletter .newsletterBlock {
+  display: none;
+  padding: 1em;
+}
+
+.newsletter .newsletterBlock p {
+  border: 1px solid #412f33;
+  padding: 1em;
+}
+
+.newsletter .newsletterBlock label {
+  font-family: "Mulish", sans-serif;
+  font-weight: bold;
+  cursor: text;
+}
+
+.newsletter .newsletterBlock input {
+  width: 75%;
+  padding: 0.5em;
+  font-size: 16px;
+  font-family: "Mulish", sans-serif;
+  margin-bottom: 1em;
+}
+
+.newsletter .newsletterBlock button {
+  padding: 0.5em;
+  font-family: "Mulish", sans-serif;
+  cursor: pointer;
+}
+
+.newsletter .newsletterBlock .closeNewsletter {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.newsletter .newsletterBlock .closeNewsletter:hover {
+  opacity: 0.75;
+}
+
+.newsletter.showing .newsletterBlock {
+  display: block;
+}
+
+.newsletter.showing .newsletterBlock .closeNewsletter {
+  display: block;
+}
+
 footer {
   text-align: right;
   padding: 1em;
@@ -337,6 +395,9 @@ footer p {
   header {
     max-width: 25%;
     position: fixed;
+    z-index: 10;
+    max-height: 90vh;
+    overflow-y: overlay;
   }
 
   nav {
@@ -418,6 +479,13 @@ footer p {
   .aboutPopup li a:hover:after {
     visibility: visible;
     width: 100%;
+  }
+
+  .newsletter .newsletterBlock {
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    max-width: 400px;
   }
 
   .pictures h2 a:after {
@@ -652,6 +720,14 @@ html.dark-theme a:hover:after {
   width: 100%;
 }
 
+html.dark-theme .newsletter .newsletterBlock {
+  background-color: #2F4858;
+}
+
+html.dark-theme .newsletter .newsletterBlock p {
+  border: 1px solid #eac6d6;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     background: #0e161b;
@@ -766,6 +842,14 @@ html.dark-theme a:hover:after {
     width: 100%;
   }
 
+  .newsletter .newsletterBlock {
+    background-color: #2F4858;
+  }
+
+  .newsletter .newsletterBlock p {
+    border: 1px solid #eac6d6;
+  }
+
   html.light-theme {
     background: radial-gradient(at 60% 50%, white 0%, #c4c4c4 100%);
     background-attachment: fixed;
@@ -815,7 +899,8 @@ html.dark-theme a:hover:after {
 
   html.light-theme .card {
     border: 1px solid #fff;
-    border-bottom: 1px solid #f7f7f7;
+    border-bottom: 1px solid #e4e2e2;
+    border-right: 1px solid #e4e2e2;
   }
 
   html.light-theme .theme-toggle svg {
@@ -877,6 +962,14 @@ html.dark-theme a:hover:after {
     visibility: visible;
     width: 100%;
   }
+
+  html.light-theme .newsletter .newsletterBlock {
+    background-color: #e0e1e0;
+  }
+
+  html.light-theme .newsletter .newsletterBlock p {
+    border: 1px solid #412f33;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -923,13 +1016,13 @@ html.dark-theme a:hover:after {
   width: 100%;
 }
 
-.backend section label {
+.backend section label,
+.backend section input {
   font-family: "Mulish", sans-serif;
   font-size: 1.1em;
   font-weight: bold;
 }
 
-.backend section input,
 .backend section select {
   width: 100%;
   padding: 1em;

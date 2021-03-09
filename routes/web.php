@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::post('/joinEmailNewsletter', [HomeController::class, 'submitEmail'])->name('submitEmail');
+
 Route::view('/about', 'about');
 
 Route::resource('painting', PaintingsController::class);

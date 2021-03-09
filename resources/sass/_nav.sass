@@ -20,7 +20,6 @@ nav
 	a
 		position: relative
 		&.active::before
-			@include mixins.arrow($lightGrey)
 			position: absolute
 			top: 0px
 			left: 50%
@@ -34,7 +33,7 @@ nav
 	left: 50%
 	transform: translateX(-50%)
 	background-color: $lightGrey
-	z-index: 99
+	z-index: 100
 	&.showing
 		display: block
 	article
@@ -70,4 +69,44 @@ nav
 	position: absolute
 	top: 10px
 	right: 10px
+
+.newsletter
+	position: relative
+	.newsletterBlock
+		display: none
+		padding: 1em
+		p
+			border: 1px solid $darkPlum
+			padding:1em
+		label
+			font-family: $header-font-stack
+			font-weight: bold
+			cursor: text
+		input
+			width: 75%
+			padding: 0.5em
+			font-size: $font-size
+			font-family: $header-font-stack
+			margin-bottom: 1em
+
+		button
+			padding:0.5em
+			font-family: $header-font-stack
+			cursor: pointer
+
+		.closeNewsletter
+			display: none
+			position: absolute
+			top: 5px
+			right: 5px
+			&:hover
+				opacity:0.75
+	&.showing
+		.newsletterBlock
+			display: block
+			.closeNewsletter
+				display: block
+
+
+
 

@@ -56,6 +56,12 @@ html.dark-theme
 		color: $pink
 		@include mixins.underline2($pink)
 
+	.newsletter .newsletterBlock
+		background-color: $darkBlue
+		p
+			border: 1px solid $pink
+
+
 
 @media (prefers-color-scheme: dark)
 	html
@@ -110,6 +116,10 @@ html.dark-theme
 
 	.pictures h2
 		@include mixins.underline($pink)
+	.newsletter .newsletterBlock
+		background-color: $darkBlue
+		p
+			border: 1px solid $pink
 
 	html.light-theme
 		background: $background
@@ -150,7 +160,9 @@ html.dark-theme
 
 		.card
 			border:1px solid #fff
-			border-bottom: 1px solid #f7f7f7
+			border-bottom: 1px solid #e4e2e2
+			border-right: 1px solid #e4e2e2
+
 
 		.theme-toggle svg
 			fill: $darkPlum
@@ -166,6 +178,11 @@ html.dark-theme
 
 		.pictures h2
 			@include mixins.underline($darkGold)
+
+		.newsletter .newsletterBlock
+			background-color: $lightGrey
+			p
+				border: 1px solid $darkPlum
 
 
 

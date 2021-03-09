@@ -19,10 +19,29 @@
 
 		bindEvents: function() {
 			$(document)
-				.on('click', '.navigationLinks a', this.toggleAboutSections)
-				.on('click', '.close', this.closeAboutSections)
+				.on('click', '.navigationLinks a, a.newsletter', this.toggleAboutSections)
+				.on('click', '.close, .closeNewsletter', this.closeAboutSections)
 				.on('click', '#toggle', this.toggleDarkMode)
+				.on('submit', '#registerEmail', this.submitNewsletter)
 				.ready(this.toggleThemeIcon);
+		},
+
+		submitNewsletter: function(e) {
+
+			e.preventDefault();
+
+			var data = {};
+			data.email = $('#emailAddress').val();
+
+			$.ajax({
+				method: "POST",
+				url: "/joinEmailNewsletter",
+				type: "JSON",
+				data: data
+			}).done(function( msg ) {
+				console.log( "Data Saved: " + msg );
+			});
+
 		},
 
 		toggleThemeIcon: function() {
@@ -58,25 +77,40 @@
 		toggleAboutSections: function(e) {
 			if(!$(this).hasClass('artistBio')){
 				e.preventDefault();
+
+				var $aboutSection = $(this).attr('class').split(' ')[0];
+
+				if($aboutSection === 'newsletter' && $('a.newsletter').hasClass('active')){
+					$('a.newsletter').removeClass('active');
+					terracotta.closeAboutSections(e);
+					return;
+
+				} else if($(this).hasClass('active') && ($aboutSection !== 'newsletter')){
+					terracotta.closeAboutSections(e);
+					return;
+				}
+
+
+				$('.aboutPopup .showing').removeClass('showing');
+				$('.navigationLinks .active').removeClass('active');
+
+
+
+				$(this).addClass('active');
+
+				console.log($aboutSection);
+				$('.aboutPopup .' + $aboutSection).addClass('showing');
+
+
+
+				if($aboutSection === 'newsletter'){
+					$('.newsletterBlock input').focus();
+				} else {
+					$('.aboutPopup .close').addClass('showing');
+				}
 			}
 
 
-			if($(this).hasClass('active')){
-				terracotta.closeAboutSections(e);
-				return;
-			}
-
-
-
-			var $aboutSection = $(this).attr('class').split(' ')[0];
-
-			$('.aboutPopup .showing').removeClass('showing');
-			$('.navigationLinks .active').removeClass('active');
-
-			$(this).addClass('active');
-
-			console.log($aboutSection);
-			$('.aboutPopup .' + $aboutSection).addClass('showing');
 
 		},
 
@@ -85,6 +119,7 @@
 
 			$('.aboutPopup .showing').removeClass('showing');
 			$('.navigationLinks .active').removeClass('active');
+			$('a.newsletter').removeClass('active');
 		},
 
 		nextImage: function(e){

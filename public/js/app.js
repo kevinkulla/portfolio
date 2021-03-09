@@ -111,7 +111,20 @@
       gtag('config', 'UA-155144334-1');
     },
     bindEvents: function bindEvents() {
-      $(document).on('click', '.navigationLinks a', this.toggleAboutSections).on('click', '.close', this.closeAboutSections).on('click', '#toggle', this.toggleDarkMode).ready(this.toggleThemeIcon);
+      $(document).on('click', '.navigationLinks a, a.newsletter', this.toggleAboutSections).on('click', '.close, .closeNewsletter', this.closeAboutSections).on('click', '#toggle', this.toggleDarkMode).on('submit', '#registerEmail', this.submitNewsletter).ready(this.toggleThemeIcon);
+    },
+    submitNewsletter: function submitNewsletter(e) {
+      e.preventDefault();
+      var data = {};
+      data.email = $('#emailAddress').val();
+      $.ajax({
+        method: "POST",
+        url: "/joinEmailNewsletter",
+        type: "JSON",
+        data: data
+      }).done(function (msg) {
+        console.log("Data Saved: " + msg);
+      });
     },
     toggleThemeIcon: function toggleThemeIcon() {
       var preferesDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -137,24 +150,35 @@
     toggleAboutSections: function toggleAboutSections(e) {
       if (!$(this).hasClass('artistBio')) {
         e.preventDefault();
-      }
+        var $aboutSection = $(this).attr('class').split(' ')[0];
 
-      if ($(this).hasClass('active')) {
-        terracotta.closeAboutSections(e);
-        return;
-      }
+        if ($aboutSection === 'newsletter' && $('a.newsletter').hasClass('active')) {
+          $('a.newsletter').removeClass('active');
+          terracotta.closeAboutSections(e);
+          return;
+        } else if ($(this).hasClass('active') && $aboutSection !== 'newsletter') {
+          terracotta.closeAboutSections(e);
+          return;
+        }
 
-      var $aboutSection = $(this).attr('class').split(' ')[0];
-      $('.aboutPopup .showing').removeClass('showing');
-      $('.navigationLinks .active').removeClass('active');
-      $(this).addClass('active');
-      console.log($aboutSection);
-      $('.aboutPopup .' + $aboutSection).addClass('showing');
+        $('.aboutPopup .showing').removeClass('showing');
+        $('.navigationLinks .active').removeClass('active');
+        $(this).addClass('active');
+        console.log($aboutSection);
+        $('.aboutPopup .' + $aboutSection).addClass('showing');
+
+        if ($aboutSection === 'newsletter') {
+          $('.newsletterBlock input').focus();
+        } else {
+          $('.aboutPopup .close').addClass('showing');
+        }
+      }
     },
     closeAboutSections: function closeAboutSections(e) {
       e.preventDefault();
       $('.aboutPopup .showing').removeClass('showing');
       $('.navigationLinks .active').removeClass('active');
+      $('a.newsletter').removeClass('active');
     },
     nextImage: function nextImage(e) {
       e.preventDefault();
