@@ -1,0 +1,49 @@
+{
+    "name": "wandersonwhcr/romans",
+    "description": "A Simple PHP Roman Numerals Library",
+    "license": "MIT",
+    "type": "library",
+    "keywords": ["filter", "validator", "roman", "roman-number", "roman-numeral", "converter", "format"],
+    "autoload": {
+        "psr-4": {
+            "Romans\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RomansTest\\": "test"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "1.0.*",
+        "phpmd/phpmd": "2.6.*",
+        "phpunit/phpunit": "6.1.*",
+        "sebastian/phpcpd": "3.0.*",
+        "squizlabs/php_codesniffer": "3.5.*"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        }
+    },
+    "scripts": {
+        "optimize": [
+            "composer install --no-dev --optimize-autoloader --classmap-authoritative"
+        ],
+        "test": [
+            "parallel-lint src",
+            "phpunit",
+            "phpcpd src",
+            "phpmd src text phpmd.xml",
+            "phpcs"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.2.x-dev"
+        }
+    }
+}
