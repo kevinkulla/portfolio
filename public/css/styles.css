@@ -613,7 +613,7 @@ html.dark-theme nav {
 }
 
 html.dark-theme .frame {
-  filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px #94702e) brightness(0.8) contrast(1.1);
+  filter: drop-shadow(-5px -5px 15px black) drop-shadow(5px 5px 15px black) drop-shadow(-5px -5px 5px #4e3b18) brightness(0.8) contrast(1.1);
 }
 
 html.dark-theme h1 {
@@ -752,7 +752,7 @@ html.dark-theme .newsletter .newsletterBlock p {
   }
 
   .frame {
-    filter: drop-shadow(10px 10px 10px black) drop-shadow(0 5px 5px #94702e) brightness(0.8) contrast(1.1);
+    filter: drop-shadow(-5px -5px 15px black) drop-shadow(5px 5px 15px black) drop-shadow(-5px -5px 5px #4e3b18) brightness(0.8) contrast(1.1);
   }
 
   h1 {
