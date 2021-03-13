@@ -433,6 +433,10 @@ footer p {
     margin-top: 5em;
   }
 
+  .aboutPopup ul {
+    max-width: 200px;
+  }
+
   .aboutPopup .close {
     display: none;
   }
@@ -469,6 +473,10 @@ footer p {
   .aboutPopup > h3 a:hover:after {
     visibility: visible;
     width: 100%;
+  }
+
+  .aboutPopup li {
+    margin-bottom: 0.75em;
   }
 
   .aboutPopup li a:after {
