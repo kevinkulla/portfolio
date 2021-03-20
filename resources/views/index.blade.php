@@ -15,7 +15,7 @@
         <div class="painting">
 			<div class="frame">
 				<a href="{{ url($collection->slug . '/' . $painting->slug) }}">
-					<img
+					<img width="auto"
 						srcset="{{ $painting->url }}?tr=w-300 300w,
 								{{ $painting->url }}?tr=w-600 600w,
 								{{ $painting->url }}?tr=w-900 900w,

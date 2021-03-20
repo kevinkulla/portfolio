@@ -145,14 +145,25 @@ main {
   filter: drop-shadow(10px 10px 10px black) drop-shadow(0 15px 15px #cea55f);
   height: auto;
   margin: auto;
-  max-height: 80vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.frame a {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .frame img {
-  width: 100%;
+  max-height: 80vh;
   height: auto;
-  display: block;
-  min-width: 200px;
+  max-width: 100%;
 }
 
 /* Styling social Icons */
