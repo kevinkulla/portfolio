@@ -161,7 +161,7 @@ main {
 }
 
 .frame img {
-  max-height: 80vh;
+  max-height: 75vh;
   height: auto;
   max-width: 100%;
 }
