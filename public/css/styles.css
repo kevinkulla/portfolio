@@ -158,6 +158,7 @@ main {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  align-items: flex-start;
 }
 
 .frame img {
