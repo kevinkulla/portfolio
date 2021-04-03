@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://instagram.com/art.by.kevin.kulla" class="instagram">
+                <a href="https://instagram.com/kevin.kulla" class="instagram">
                     <svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-brand-instagram' width='40' height='40' viewBox='0 0 24 24' stroke-width='1' stroke='none' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'>
                         <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                         <rect x='4' y='4' width='16' height='16' rx='4' />
