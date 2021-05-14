@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         view()->share('collections', \App\Models\Collection::all());
+        view()->share('collections', \App\Models\Collection::all());
 
         $filter = new IntToRoman();
         $year = $filter->filter( date('Y'));

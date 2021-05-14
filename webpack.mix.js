@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js');
 
-mix.sass('resources/sass/styles.sass', 'public/css', {
+mix.sass('resources/sass/base.sass', 'public/css', {
 	sassOptions: {
         indentedSyntax: false
     }
