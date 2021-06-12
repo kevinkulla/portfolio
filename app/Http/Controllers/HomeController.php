@@ -36,6 +36,8 @@ class HomeController extends Controller
         $paintings = Collection::first()->paintings;
 
 
+
+
         return view('index', compact('paintings'));
     }
 

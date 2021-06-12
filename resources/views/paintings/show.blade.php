@@ -29,7 +29,7 @@
 			</div>
 		</div>
 
-		<div class="restOfPaintings">
+		{{-- <div class="restOfPaintings">
 
 			@foreach ($paintings as $p)
 
@@ -37,7 +37,7 @@
 
 			@endforeach
 
-		</div>
+		</div> --}}
 
     </section>
 
