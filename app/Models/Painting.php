@@ -24,4 +24,9 @@ class Painting extends Model
             $painting->slug = Str::slug($painting->title, '-');
         });
     }
+
+    public function collection()
+    {
+        return $this->belongsTo(Collection::class);
+    }
 }

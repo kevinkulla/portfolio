@@ -115,7 +115,9 @@ class PaintingsController extends Controller
     public function show(Collection $collection, Painting $painting)
     {
 
-        return view('paintings.show', compact('painting', 'collection'));
+        $paintings = Collection::find($collection->id)->paintings->except($painting->id);
+
+        return view('paintings.show', compact('painting', 'paintings'));
 
     }
 

@@ -10,6 +10,12 @@ class Collection extends Model
 {
     use HasFactory;
 
+    public function paintings()
+    {
+        return $this->hasMany(Painting::class);
+    }
+
+
     protected $guarded = [];
 
     public function getRouteKeyName()
@@ -23,5 +29,6 @@ class Collection extends Model
             $collection->slug = Str::slug($collection->title, '-');
         });
     }
+
 
 }

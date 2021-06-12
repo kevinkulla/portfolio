@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 
 	<title>@yield('title')</title>
+
+	    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="description" content="Kevin Kulla is a Canadian figurative painter born and based in Peterborough, Ontario.">
 	<meta name="author" content="Kevin Kulla">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

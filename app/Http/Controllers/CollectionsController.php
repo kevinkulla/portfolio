@@ -76,10 +76,10 @@ class CollectionsController extends Controller
     public function show(Collection $collection)
     {
 
-        $paintings = Painting::where('collection', $collection->id)->get();
+        $paintings = Collection::find($collection->id)->paintings;
 
 
-        return view('collections.show', compact('paintings', 'collection'));
+        return view('collections.show', compact('collection'));
 
     }
 
@@ -106,8 +106,7 @@ class CollectionsController extends Controller
     public function update(Request $request, Collection $collection)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required'
+            'title' => 'required'
         ]);
 
         $collection->update([

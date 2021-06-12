@@ -212,26 +212,15 @@
 
 /***/ }),
 
-/***/ "./resources/sass/styles.sass":
-/*!************************************!*\
-  !*** ./resources/sass/styles.sass ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!****************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/styles.sass ***!
-  \****************************************************************/
+/*!**************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/base.sass ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/kevinkulla/Sites/kevinkulla/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/kevinkulla/Sites/kevinkulla/resources/sass/styles.sass */"./resources/sass/styles.sass");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '/Users/kevinkulla/Sites/kevinkulla/resources/sass/base.sass'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })

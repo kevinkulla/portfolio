@@ -33,7 +33,7 @@ class HomeController extends Controller
     public function index(Collection $collection)
     {
         $collection = Collection::oldest()->first();
-        $paintings = Painting::where('collection', $collection->id)->latest()->get();
+        $paintings = Painting::where('collection_id', $collection->id)->latest()->get();
 
 
 

@@ -6,7 +6,7 @@
 
 	<section class="pictures">
 
-		<h2>{{ $collection->title }}</h2>
+		<h2>{{ $painting->collection->title }}</h2>
 
         <div class="painting">
 			<div class="frame">
@@ -27,6 +27,16 @@
 					<li>{{ $painting->year }}</li>
 				</ul>
 			</div>
+		</div>
+
+		<div class="restOfPaintings">
+
+			@foreach ($paintings as $p)
+
+				<img src="{{ $p->thumbnail }}" />
+
+			@endforeach
+
 		</div>
 
     </section>

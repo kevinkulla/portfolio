@@ -11,7 +11,7 @@
         	<p>{{ $collection->description }}</p>
         </article>
 
-        @foreach($paintings as $painting)
+        @foreach($collection->paintings as $painting)
         <div class="painting">
 			<div class="frame">
 				<a href="{{ url($collection->slug . '/' . $painting->slug) }}">
