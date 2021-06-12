@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', ucwords($collection->title) . ' — Kevin Kulla')
+@section('title', 'Work — Kevin Kulla')
 
 @section('content')
 
 	<section class="pictures">
-        <article class="description">
-        	<h2>{{ $collection->title }}</h2>
+        {{-- <article class="description">
+        	<h2>{{ $paintings[0]->collection->title }}</h2>
 
-        	<p>{{ $collection->description }}</p>
-        </article>
+        	<p>{{ $paintings[0]->collection->description }}</p>
+        </article> --}}
 
-        @foreach($collection->paintings as $painting)
+        @foreach($paintings as $painting)
         <div class="painting">
 			<div class="frame">
-				<a href="{{ url($collection->slug . '/' . $painting->slug) }}">
+				<a href="{{ url($painting->collection->slug . '/' . $painting->slug) }}">
 					<img width="auto"
 						srcset="{{ $painting->url }}?tr=w-300 300w,
 								{{ $painting->url }}?tr=w-600 600w,
@@ -26,7 +26,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<h2><a href="{{ url($collection->title . '/' . $painting->slug) }}"> {{ $painting->title }}</a></h2>
+				<h2><a href="{{ url($painting->collection->title . '/' . $painting->slug) }}"> {{ $painting->title }}</a></h2>
 				<ul>
 					<li>{{ $painting->height }}cm x {{$painting->width }}cm</li>
 					<li>{{ $painting->medium }}</li>

@@ -73,13 +73,13 @@ class CollectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Collection $collection)
+    public function show()
     {
 
-        $paintings = Collection::find($collection->id)->paintings;
+        $paintings = Collection::first()->paintings;
 
 
-        return view('collections.show', compact('collection'));
+        return view('collections.show', compact('paintings'));
 
     }
 

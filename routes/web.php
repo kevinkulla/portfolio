@@ -32,6 +32,7 @@ Route::resource('collection', CollectionsController::class);
 
 Route::resource('press', PressReleasesController::class);
 
-Route::get('/{collection}', [CollectionsController::class, 'show']);
+// Route::get('/{collection}', [CollectionsController::class, 'show'])->name('work');
+Route::get('/work', [CollectionsController::class, 'show'])->name('work');
 
 Route::get('/{collection}/{painting}', [PaintingsController::class, 'show']);

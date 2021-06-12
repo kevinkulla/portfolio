@@ -3,16 +3,17 @@
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='25px' height='25px'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'/></svg>
     </a>
 
+    <h3 class="desktop"><a href="{{ route('work') }}">Work</a></h3>
     <h3 class="desktop"><a href="{{ url('about') }}">About</a></h3>
 
-    <article class="collections">
+   {{--  <article class="collections">
         <h3>Collections</h3>
         <ul>
             @foreach($collections as $c)
                 <li><a href="{{ url($c->slug) }}">{{ $c->title }}</a></li>
             @endforeach
         </ul>
-    </article>
+    </article> --}}
 
     <article class="connect">
         <h3>Connect</h3>

@@ -30,15 +30,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Collection $collection)
+    public function index()
     {
-        $collection = Collection::oldest()->first();
-        $paintings = Painting::where('collection_id', $collection->id)->latest()->get();
+
+        $paintings = Collection::first()->paintings;
 
 
-
-
-        return view('index', compact('paintings', 'collection'));
+        return view('index', compact('paintings'));
     }
 
     public function submitEmail(Request $request)

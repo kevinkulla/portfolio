@@ -10,9 +10,7 @@
 
     <article class="artistStatement">
         <h2>Artist's Statement</h2>
-        <p>Growing up, being a very visual thinker meant survival. I rush to translate pictures in my head into words before my mind changes channels. The relationship between entities in the world captures my focus more than the entities themselves. Constructing a mental-diorama around a single thought sparks an emotional bond, providing time for the idea to grow.</p>
-
-        <p>Coping mechanisms I developed as a child guide my practice. At work, my emotions act as a string weaving memories, influences, and current events into emotionally-charged scenes. Unrefined edges remain as remnants from the urgency required to capture fickle ideas before they're gone.</p>
+        <p>Words and numbers have always been mumbo-jumbo in my head. Instead, I’d cement an idea by erecting a mental-diorama—drawing inspiration from memories, influences, and current events. Using acrylic paint, and beginning without sketches or studies, I build emotionally-charged, imaginative western scenes adorned with playful details. Iconography, such as lit cigarettes and revolvers, are wielded by quick-draw gunslingers and ruthless outlaws. Characters often make intense eye-contact, breaking the fourth wall, pulling the viewer into the action.</p>
     </article>
 
     <article class="artistBio">
