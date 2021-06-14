@@ -29,18 +29,6 @@
 			</div>
 		</div>
 
-
-
-		{{-- <div class="restOfPaintings">
-
-			@foreach ($paintings as $p)
-
-				<img src="{{ $p->thumbnail }}" />
-
-			@endforeach
-
-		</div> --}}
-
     </section>
 
 @endsection
